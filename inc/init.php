@@ -16,7 +16,7 @@ foreach ( glob( plugin_dir_path( __FILE__ ) . "theme-widgets/*.php" ) as $file )
  * @author ITclanbd
  */
 if ( did_action( 'elementor/loaded' ) ) {
-	require_once( NWT_INC_DIR . '/elementor-extensions/elementor-init.php' );
+	require_once( AFSARME_INC_DIR . '/elementor-extensions/elementor-init.php' );
 }
 
 /**
@@ -24,12 +24,12 @@ if ( did_action( 'elementor/loaded' ) ) {
  * @since 1.0.0
  * @author ITclanbd
  */
-require_once( NWT_INC_DIR . '/functions.php' );
-require_once( NWT_INC_DIR . '/ajax-functions.php' );
+require_once( AFSARME_INC_DIR . '/functions.php' );
+require_once( AFSARME_INC_DIR . '/ajax-functions.php' );
 
 /** Load all kirki settings files*/
 if ( class_exists( 'Kirki' ) ) {
-	require_once( NWT_INC_DIR . '/kirki-options/add-settings.php' );
+	require_once( AFSARME_INC_DIR . '/kirki-options/add-settings.php' );
 }
 
 /**
@@ -43,8 +43,8 @@ foreach ( glob( plugin_dir_path( __FILE__ ) . "classes/*.php" ) as $file ) {
 
 /** metabox tabs*/
 // if ( ! class_exists( 'MB_Tabs' ) ) {
-// 	if ( file_exists( NWT_INC_DIR . '/extensions/meta-box/addons/meta-box-tabs/meta-box-tabs.php' ) ) {
-// 		include_once( NWT_INC_DIR . '/extensions/meta-box/addons/meta-box-tabs/meta-box-tabs.php' );
+// 	if ( file_exists( AFSARME_INC_DIR . '/extensions/meta-box/addons/meta-box-tabs/meta-box-tabs.php' ) ) {
+// 		include_once( AFSARME_INC_DIR . '/extensions/meta-box/addons/meta-box-tabs/meta-box-tabs.php' );
 // 	}
 // }
 

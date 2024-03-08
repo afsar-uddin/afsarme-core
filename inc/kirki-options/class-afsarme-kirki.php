@@ -15,7 +15,7 @@
  * ensuring that all CSS & fonts still work.
  * It does not handle the customizer options, simply the frontend CSS.
  */
-class NWT_Kirki {
+class AFSARME_Kirki {
 
 	/**
 	 * The config ID.
@@ -421,4 +421,4 @@ class NWT_Kirki {
 	}
 }
 
-new NWT_Kirki();
+new AFSARME_Kirki();

@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-class NWT_Elements_Slide extends Widget_Base {
+class AFSARME_Elements_Slide extends Widget_Base {
 
 	public function get_name() {
 		return 'ic-slider';
@@ -21,7 +21,7 @@ class NWT_Elements_Slide extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'nwt_elements' ];
+		return [ 'afsarme_elements' ];
 	}
 
 	protected function register_controls() {
@@ -70,7 +70,7 @@ class NWT_Elements_Slide extends Widget_Base {
 		$this->add_control(
 			'slides',
 			[
-				'label' => esc_html__( 'Slide List', 'nwt-core' ),
+				'label' => esc_html__( 'Slide List', 'am-core' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'title_field' => '{{{ title }}}',
@@ -85,18 +85,18 @@ class NWT_Elements_Slide extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 		?>
 
-<div class="nwt-slide-wrapper">
+<div class="am-slide-wrapper">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="nwt-slides">
+				<div class="am-slides">
 					<?php
 						$slides = $settings['slides'];
 						foreach($slides as $slide) :
 							// var_dump($slide);
 					?>
-					<div class="nwt-slide">
-						<div class="nwt-slide-content">
+					<div class="am-slide">
+						<div class="am-slide-content">
 							<?php if($slide['title']): ?>
 								<h2><?php echo esc_html($slide['title']); ?></h2>
 							<?php endif; ?>
@@ -110,7 +110,7 @@ class NWT_Elements_Slide extends Widget_Base {
 							<?php endif; ?>
 						</div>
 						<?php if($slide['slide_img']['url']) : ?>
-							<div class="nwt-slide-fig">
+							<div class="am-slide-fig">
 								<img src="<?php echo esc_url($slide['slide_img']['url']); ?>">
 							</div>
 						<?php endif; ?>
@@ -126,4 +126,4 @@ class NWT_Elements_Slide extends Widget_Base {
 	}
 }
 
-Plugin::instance()->widgets_manager->register( new NWT_Elements_Slide() );
+Plugin::instance()->widgets_manager->register( new AFSARME_Elements_Slide() );

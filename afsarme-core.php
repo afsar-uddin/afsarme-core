@@ -13,7 +13,7 @@
  * @package           Plugins_Basic
  *
  * @wordpress-plugin
- * Plugin Name:       nwt-core
+ * Plugin Name:       afsarme-core
  * Plugin URI:        https://www.notionwebtech.com
  * Description:       This plugin for core functionality of the whole website.
  * Version:           1.0.0
@@ -21,7 +21,7 @@
  * Author URI:        https://www.notionwebtech.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       nwt
+ * Text Domain:       afsarme
  * Domain Path:       /languages
  */
 
@@ -33,7 +33,7 @@
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
  */
-define( 'NWT_CORE_VERSION', '1.0.0' );
+define( 'AFSARME_CORE_VERSION', '1.0.0' );
 
 
  if ( ! function_exists( 'is_plugin_active' ) ) {
@@ -41,54 +41,51 @@ define( 'NWT_CORE_VERSION', '1.0.0' );
 }
 
 /* define plugin file */
-if ( ! defined( 'NWT_CORE_PLUGIN_FILE' ) ) {
-	define( 'NWT_CORE_PLUGIN_FILE', __FILE__ );
+if ( ! defined( 'AFSARME_CORE_PLUGIN_FILE' ) ) {
+	define( 'AFSARME_CORE_PLUGIN_FILE', __FILE__ );
 }
 
 /* define plugin path */
-if ( ! defined( 'NWT_CORE_PATH' ) ) {
-	define( 'NWT_CORE_PATH', plugin_dir_path( __FILE__ ) );
+if ( ! defined( 'AFSARME_CORE_PATH' ) ) {
+	define( 'AFSARME_CORE_PATH', plugin_dir_path( __FILE__ ) );
 }
 
 /* define plugin URL */
-if ( ! defined( 'NWT_CORE_URL' ) ) {
-	define( 'NWT_CORE_URL', plugins_url() . '/nwt-core' );
+if ( ! defined( 'AFSARME_CORE_URL' ) ) {
+	define( 'AFSARME_CORE_URL', plugins_url() . '/afsarme-core' );
 }
 
 /* define inc URL */
-if ( ! defined( 'NWT_INC_URL' ) ) {
-	define( 'NWT_INC_URL', NWT_CORE_URL . '/inc' );
+if ( ! defined( 'AFSARME_INC_URL' ) ) {
+	define( 'AFSARME_INC_URL', AFSARME_CORE_URL . '/inc' );
 }
 
 /* define inc path */
-if ( ! defined( 'NWT_INC_DIR' ) ) {
-	define( 'NWT_INC_DIR', NWT_CORE_PATH . 'inc' );
+if ( ! defined( 'AFSARME_INC_DIR' ) ) {
+	define( 'AFSARME_INC_DIR', AFSARME_CORE_PATH . 'inc' );
 }
 
-function nwt_core_construct() {
+function AFSARME_core_construct() {
 
 	/** Require file*/
-	require_once( NWT_INC_DIR . '/init.php' );
+	require_once( AFSARME_INC_DIR . '/init.php' );
 
 	/** Load text domain*/
-	load_plugin_textdomain( 'nwt-core', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	load_plugin_textdomain( 'afsarme-core', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 
-add_action( 'plugins_loaded', 'nwt_core_construct', 20 );
+add_action( 'plugins_loaded', 'AFSARME_core_construct', 20 );
 
  /** Activation and Deactivation*/
 
 register_activation_hook(__FILE__, 'activate_pp');
 function activate_pp() {
-    require_once plugin_dir_path(__FILE__) . 'inc/class-nwt-activator.php';
+    require_once plugin_dir_path(__FILE__) . 'inc/class-afsarme-activator.php';
 }
 
 register_deactivation_hook(__FILE__, 'deactivate_pp');
 function deactivate_pp() {
-    require_once plugin_dir_path(__FILE__) . 'inc/class-nwt-deactivator.php';
+    require_once plugin_dir_path(__FILE__) . 'inc/class-afsarme-deactivator.php';
 
     unregister_post_type('pp-product');
 }
-
-/** Uer/customer authentications */
-require_once( NWT_INC_DIR . '/authentications.php' );

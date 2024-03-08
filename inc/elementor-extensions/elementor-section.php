@@ -1,9 +1,9 @@
 <?php
 function ic_add_elementor_widget_categories( $elements_manager ) {
 
-	$category_prefix = 'nwt_elements';
+	$category_prefix = 'afsarme_elements';
 	$elements_manager->add_category(
-		'nwt_elements',
+		'afsarme_elements',
 		[
 			'title' => __( 'IC Elements', 'ic-core' ),
 			'icon'  => 'font',
